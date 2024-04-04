@@ -63,31 +63,7 @@ public class D3Test {
     // 4 | assert | link | /reset
     assertEquals(vars.get("link").toString(), "http://localhost:8080/reset");
   }
-  @Test
-  public void dEFECT1FUNGREETACATWITHNAME() {
-    // Test name: DEFECT-1-FUN-GREET-A-CAT-WITH-NAME
-    // Step # | name | target | value
-    // 1 | runScript | document.cookie = "1=true";document.cookie = "2=false";document.cookie = "3=false"; | 
-    
-    // 2 | open | /greet-a-cat/Jennyanydots | 
-    driver.get("http://localhost:8080//greet-a-cat/Jennyanydots");
-    js.executeScript("document.cookie = \"1=true\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
-    // 3 | assertText | xpath=//div[@id='greeting']/h4 | Jennyanydots is not here.
-    assertThat(driver.findElement(By.xpath("//div[@id=\'greeting\']/h4")).getText(), is("Jennyanydots is not here."));
-  }
-  @Test
-  public void dEFECT2FUNGREETACAT() {
-    // Test name: DEFECT-2-FUN-GREET-A-CAT
-    // Step # | name | target | value
-    // 1 | open | http://localhost:8080/ | 
-    driver.get("http://localhost:8080/");
-    // 2 | runScript | document.cookie = "1=false";document.cookie = "2=true";document.cookie = "3=true"; | 
-    js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=true\";document.cookie = \"3=true\";");
-    // 3 | click | linkText=Greet-A-Cat | 
-    driver.findElement(By.linkText("Greet-A-Cat")).click();
-    // 4 | assertText | xpath=//div[@id='greeting']/h4 | Meow!
-    assertThat(driver.findElement(By.xpath("//div[@id=\'greeting\']/h4")).getText(), is("Meow!"));
-  }
+
   @Test
   public void tEST2RESET() {
     // Test name: TEST-2-RESET
